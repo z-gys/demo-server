@@ -18,22 +18,6 @@ import javax.sql.DataSource;
 @Configuration
 @EnableJpaRepositories("ru.zgys.demo.repository")
 @EnableTransactionManagement
-@ConfigurationProperties(prefix = "spring.datasource")
 public class DatabaseConfig extends HikariConfig {
-	private static final Logger log = LoggerFactory.getLogger(DatabaseConfig.class);
-	private String url;
 
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	@Bean
-	public DataSource dataSource() {
-		this.addDataSourceProperty("url", this.getUrl());
-		return new HikariDataSource(this);
-	}
 }

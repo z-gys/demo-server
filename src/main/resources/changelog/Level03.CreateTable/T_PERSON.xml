@@ -7,8 +7,8 @@
 		<createSequence sequenceName="t_person_id_seq"/>
 	</changeSet>
 
-	<changeSet author="U.Goryntsev" id="create table T_PERSON" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
-		<createTable tableName="T_PERSON">
+	<changeSet author="U.Goryntsev" id="create table t_person" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<createTable tableName="t_person">
 			<column name="id" type="BIGINT" defaultValueSequenceNext="t_person_id_seq">
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
@@ -30,7 +30,7 @@
 			<column name="email" type="VARCHAR(255)">
 				<constraints nullable="true"/>
 			</column>
-			<column name="birthday" type="TIMESTAMP(6) WITHOUT TIME ZONE">
+			<column name="birthday" type="DATE">
 				<constraints nullable="true"/>
 			</column>
 		</createTable>

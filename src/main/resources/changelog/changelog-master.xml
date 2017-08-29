@@ -4,6 +4,6 @@
 		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
 		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog dbchangelog-3.5.xsd">
 
-
+	<include file="Level03.CreateTable/T_PERSON.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
