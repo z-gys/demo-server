@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog ../dbchangelog-3.5.xsd">
+
+	<changeSet author="U.Goryntsev" id="create t_person_id_seq">
+		<createSequence sequenceName="t_person_id_seq"/>
+	</changeSet>
+
+	<changeSet author="U.Goryntsev" id="create table T_PERSON" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<createTable tableName="T_PERSON">
+			<column name="id" type="BIGINT" defaultValueSequenceNext="t_person_id_seq">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="active" type="BOOL" defaultValueBoolean="true">
+				<constraints nullable="false"/>
+			</column>
+			<column name="create_date" type="TIMESTAMP(6) WITHOUT TIME ZONE" defaultValueComputed="now()">
+				<constraints nullable="false"/>
+			</column>
+			<column name="last_update" type="TIMESTAMP(6) WITHOUT TIME ZONE" defaultValueComputed="now()">
+				<constraints nullable="false"/>
+			</column>
+			<column name="first_name" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="last_name" type="VARCHAR(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="email" type="VARCHAR(255)">
+				<constraints nullable="true"/>
+			</column>
+			<column name="birthday" type="TIMESTAMP(6) WITHOUT TIME ZONE">
+				<constraints nullable="true"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+</databaseChangeLog>
