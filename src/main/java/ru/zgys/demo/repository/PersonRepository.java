@@ -13,4 +13,6 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
 	@Query("SELECT p.id FROM Person p WHERE p.active = true ")
 	List<Long> getPersonIds();
+
+	Person findByActiveTrueAndId(Long id);
 }

@@ -1,6 +1,7 @@
 package ru.zgys.demo.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import ru.zgys.demo.domain.Person;
 import ru.zgys.demo.dto.PersonDTO;
 
@@ -11,4 +12,8 @@ import ru.zgys.demo.dto.PersonDTO;
 public interface PersonMapper {
 
 	Person toEntity(PersonDTO dto);
+
+	void updateEntity(@MappingTarget Person person, PersonDTO dto);
+
+	PersonDTO toDto(Person person);
 }
