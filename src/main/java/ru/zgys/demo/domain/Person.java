@@ -14,10 +14,10 @@ import static javax.persistence.GenerationType.SEQUENCE;
  * @author U.Goryntsev 29.08.2017
  */
 @Entity
-@Table(name = "`T_PERSON`")
+@Table(name = "t_person")
 public class Person extends BaseEntity{
 	@Id
-	@SequenceGenerator(name = "t_person_id_seq", sequenceName = "t_person_id_seq")
+	@SequenceGenerator(name = "t_person_id_seq", sequenceName = "t_person_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = SEQUENCE, generator = "t_person_id_seq")
 	private Long id;
 
