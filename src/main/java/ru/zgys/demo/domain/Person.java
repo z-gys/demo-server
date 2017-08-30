@@ -35,40 +35,45 @@ public class Person extends BaseEntity{
 		return id;
 	}
 
-	public void setId(Long id) {
+	public Person setId(Long id) {
 		this.id = id;
+		return this;
 	}
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public Person setFirstName(String firstName) {
 		this.firstName = firstName;
+		return this;
 	}
 
 	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public Person setLastName(String lastName) {
 		this.lastName = lastName;
+		return this;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public Person setEmail(String email) {
 		this.email = email;
+		return this;
 	}
 
 	public LocalDate getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(LocalDate birthday) {
+	public Person setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
+		return this;
 	}
 
 	@Override
